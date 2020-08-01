@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,7 +29,7 @@ namespace QuickTenant
         {
             services.AddRouting(option => option.LowercaseUrls = true);
             services.AddDbContext<ApplicationDbContext>(
-                option => option.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
+                option => option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddControllersWithViews();
         }

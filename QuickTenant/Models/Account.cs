@@ -8,7 +8,9 @@ namespace QuickTenant.Models
 {
     public class Account
     {
-        public Guid ID { get; set; }
+        [Key]
+        public int ID { get; set; }
+        public Guid ObjectID { get; set; }
         public string UserID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -21,9 +23,9 @@ namespace QuickTenant.Models
     {
         [Required, DataType(DataType.Text)]
         public string UserID { get; set; }
-        [Required, DataType(DataType.Text)]
+        [Required]
         public string FirstName { get; set; }
-        [Required, DataType(DataType.Text)]
+        [Required]
         public string LastName { get; set; }
         [Required, DataType(DataType.EmailAddress)]
         public string EmailAddress { get; set; }
