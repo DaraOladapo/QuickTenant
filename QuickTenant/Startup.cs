@@ -15,10 +15,9 @@ namespace QuickTenant
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration, ApplicationDbContext dbContext)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-            DBContext = dbContext;
         }
 
         public IConfiguration Configuration { get; }
@@ -27,6 +26,7 @@ namespace QuickTenant
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddRouting(option => option.LowercaseUrls = true);
             services.AddDbContext<ApplicationDbContext>(
                 option => option.UseSqlite(Configuration.GetConnectionString("DefaultConnection")));
 

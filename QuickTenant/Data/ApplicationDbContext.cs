@@ -9,12 +9,9 @@ namespace QuickTenant.Data
     public class ApplicationDbContext : DbContext
     {
 
-        ILogger<ApplicationDbContext> _logger;
-
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, ILogger<ApplicationDbContext> logger)
           : base(options)
         {
-            _logger = logger;
         }
 
         public DbSet<Account> Accounts { get; set; }

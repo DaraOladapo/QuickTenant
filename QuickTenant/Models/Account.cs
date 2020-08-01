@@ -13,7 +13,7 @@ namespace QuickTenant.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string FullName => $"{FirstName} {LastName}";
-        public string Emailddress { get; set; }
+        public string EmailAddress { get; set; }
         public DateTime CreatedDate { get; set; }
 
     }
@@ -26,6 +26,6 @@ namespace QuickTenant.Models
         [Required, DataType(DataType.Text)]
         public string LastName { get; set; }
         [Required, DataType(DataType.EmailAddress)]
-        public string Emailddress { get; set; }
+        public string EmailAddress { get; set; }
     }
 }

@@ -25,7 +25,7 @@ namespace QuickTenant.Controllers.API
                 var AccountToCreate = new Account()
                 {
                     CreatedDate = DateTime.Now,
-                    Emailddress = createAccount.Emailddress,
+                    EmailAddress = createAccount.EmailAddress,
                     FirstName = createAccount.FirstName,
                     LastName = createAccount.LastName,
                     UserID = createAccount.UserID
