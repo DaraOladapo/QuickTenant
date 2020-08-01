@@ -29,7 +29,7 @@ namespace QuickTenant.Controllers.API
                     FirstName = createAccount.FirstName,
                     LastName = createAccount.LastName,
                     UserID = createAccount.UserID,
-                    ObjectID=Guid.NewGuid.ToString()
+                    ObjectID=Guid.NewGuid().ToString()
                 };
 
                 var CreatedAccount = dbContext.Accounts.Add(AccountToCreate).Entity;

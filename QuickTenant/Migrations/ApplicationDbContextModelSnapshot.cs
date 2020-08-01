@@ -21,9 +21,10 @@ namespace QuickTenant.Migrations
 
             modelBuilder.Entity("QuickTenant.Models.Account", b =>
                 {
-                    b.Property<Guid>("ID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -35,6 +36,9 @@ namespace QuickTenant.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ObjectID")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserID")
